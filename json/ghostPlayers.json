@@ -1,0 +1,187 @@
+[
+    
+    {
+        "name": "Leo",
+        "lastName": "Messi",
+        "age": 35,
+        "stats": 100,
+        "position": "Delantero"
+    },
+
+    {
+        "name": "Cristiano",
+        "lastName": "Ronaldo",
+        "age": 37,
+        "stats": 100,
+        "position": "Delantero"
+    },
+    
+    {
+        "name": "Neymar",
+        "lastName": "Da Silva Santos Junior.",
+        "age": 30,
+        "stats": 100,
+        "position": "Delantero"
+    },
+
+    {
+        "name": "Ronaldinho",
+        "lastName": "Gaucho",
+        "age": 42,
+        "stats": 100,
+        "position": "Delantero"
+    },
+
+    {
+        "name": "Diego",
+        "lastName": "Maradona",
+        "age": 25,
+        "stats": 100,
+        "position": "Delantero"
+    },
+
+    {
+        "name": "Pele",
+        "lastName": "do Nascimento",
+        "age": 17,
+        "stats": 100,
+        "position": "Delantero"
+    },
+    
+    {
+        "name": "Emiliano",
+        "lastName": "Martinez",
+        "age": 29,
+        "stats": 100,
+        "position": "Arquero"
+    },
+
+    {
+        "name": "Angel",
+        "lastName": "Di Maria",
+        "age": 34,
+        "stats": 100,
+        "position": "Delantero"
+    },
+
+    {
+        "name": "Leandro",
+        "lastName": "Paredes",
+        "age": 28,
+        "stats": 100,
+        "position": "Mediocampista"
+    },
+
+    {
+        "name": "Rodrigo",
+        "lastName": "De Paul",
+        "age": 28,
+        "stats": 100,
+        "position": "Mediocampista"
+    },
+    
+    {
+        "name": "Kun",
+        "lastName": "Aguero",
+        "age": 34,
+        "stats": 100,
+        "position": "Delantero"
+    },
+
+    {
+        "name": "Franco",
+        "lastName": "Armani",
+        "age": 35,
+        "stats": 100,
+        "position": "Arquero"
+    },
+
+    {
+        "name": "Nicolas",
+        "lastName": "Otamendi",
+        "age": 34,
+        "stats": 100,
+        "position": "Defensor"
+    },
+
+    {
+        "name": "Gonzalo",
+        "lastName": "Montiel",
+        "age": 25,
+        "stats": 100,
+        "position": "Defensor"
+    },
+
+    {
+        "name": "Nicolas",
+        "lastName": "Tagliafico",
+        "age": 29,
+        "stats": 100,
+        "position": "Defensor"
+    },
+
+    {
+        "name": "Marcos",
+        "lastName": "Acuña",
+        "age": 30,
+        "stats": 100,
+        "position": "Defensor"
+    },
+
+    {
+        "name": "Exequiel",
+        "lastName": "Palacios",
+        "age": 23,
+        "stats": 100,
+        "position": "Mediocampista"
+    },
+
+    {
+        "name": "Giovani",
+        "lastName": "Lo Celso",
+        "age": 26,
+        "stats": 100,
+        "position": "Mediocampista"
+    },
+
+    {
+        "name": "Paulo",
+        "lastName": "Dybala",
+        "age": 28,
+        "stats": 100,
+        "position": "Delantero"
+    },
+
+    {
+        "name": "Angel",
+        "lastName": "Correa",
+        "age": 27,
+        "stats": 100,
+        "position": "Delantero"
+    },
+
+    {
+        "name": "Julian",
+        "lastName": "Alvarez",
+        "age": 22,
+        "stats": 100,
+        "position": "Delantero"
+    },
+
+    {
+        "name": "Nicolas",
+        "lastName": "Gonzales",
+        "age": 24,
+        "stats": 100,
+        "position": "Delantero"
+    },
+
+    {
+        "name": "German",
+        "lastName": "Pezzella",
+        "age": 31,
+        "stats": 100,
+        "position": "Defensor"
+    }
+
+]

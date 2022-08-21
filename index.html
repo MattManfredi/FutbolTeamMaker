@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles.css">
+    <title>FTM</title>
+</head>
+<body>
+    <header>
+        <div class="tituloYparrafo">
+            <h1>futbol team maker</h1>
+            <p>Futbol team maker es una aplicacion web pensada en solucionar el mayor problema al querer jugar un partido de futbol con amigos, el armdo de equipos.</p>
+            <p>En todo grupo de amigos que quieren jugar al futbol amateurmente, se discute quien arma los equipos. Y generalmente nadie se quiere hacer cargo para no caer en la mira si el partido es disparejo.</p>
+            <p class="parrafo-titulo">Esta aplicacion lo que busca es realizar una division pareja de los integrantes, dividiendolos en equipos igualados en base de la estadistica general de cada persona. Ya sea para futbol 5, futbol 7, futbol 9 o futbol 11</p>
+        </div>
+    </header>
+    
+    <main>
+
+
+    <!-- Botones Menu Inicial -->
+    <div class="menuInicial">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Cargar Jugadores
+        </button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" id="loadedPlayers">
+            Crear Equipos
+        </button>
+    </div>
+    
+    <!-- MODALS -->
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <!-- Modal Carga Jugadores-->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Carga de Jugadores</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <form id="idForm" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="idNombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="idNombre" required >
+                        </div>
+                        <div class="col-md-6">
+                            <label for="idApellido" class="form-label">Apellido:</label>
+                            <input type="text" class="form-control" id="idApellido" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="idEdad" class="form-label">Edad:</label>
+                            <input type="number" class="form-control" id="idEdad" min="1" max="100" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="idEstadistica" class="form-label">Estadistica:</label>
+                            <input type="number" class="form-control" id="idEstadistica" min="1" max="100" required>
+                        </div>
+                        <select class="form-select" aria-label="Default select example" id="idPosicion" required>
+                            <option selected value="">Seleccione posicion</option>
+                            <option value="Delantero">Delantero</option>
+                            <option value="Mediocampista">Mediocampista</option>
+                            <option value="Defensor">Defensor</option>
+                            <option value="Arquero">Arquero</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Cargar Jugador</button>
+                    </form>
+                </div>
+                <div id="divAlert"></div>
+                <div id="divJugadores" class="tareas">
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" id="idBotonJugadores" class="btn btn-secondary">Mostrar Jugadores Cargados</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <!-- Modal Armado de equipos-->
+  <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Armador de Equipos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <!-- DIV PARA MOSTRAR JUGADORES CARGADOS -->
+            <div id="divAgregarJugadores" class="tareas">
+            </div>
+            <!-- TABLE DONDE SE VAN AGREGANDO LOS JUGADORES -->
+            <table class="table table-hover" id="tablaJugadoresAgregados">
+                <thead>
+                    <tr class="table-primary">
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">APELLIDO</th>
+                        <th scope="col">EDAD</th>
+                        <th scope="col"> </th>
+                    </tr>
+                </thead>
+                <tbody id="tablePlayers">
+                </tbody>
+                <tfoot>
+                    <tr id="tableFooter" class="table-secondary">
+                        <th scope="col" colspan="5">Ningun jugador seleccionado - Seleccione Jugadores para comenzar!</th>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <!-- TEMPLATES -->
+            <template id="template-footer">
+                <th scope="row" colspan="2">Total Jugadores Agregados</th>
+                <td>10</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" id="vaciar-jugadores">
+                        Quitar todos
+                    </button>
+                </td>
+            </template>
+            
+            <template id="template-jugadores">
+              <tr>
+                <td class="upper">Nombre</td>
+                <td class="upper">Apellido</td>
+                <td class="upper">Edad</td>
+                <td>
+                    <button class="btn btn-danger btn-sm">
+                    QUITAR
+                    </button>
+                </td>
+            </template>
+
+
+            <!-- BOTONES PARA ARMADO DE LOS EQUIPOS -->
+            <!--
+            <div class="buttonTeams">
+                <button type="button" class="btn btn-success" id="idBotonEquipo5">Futbol 5</button>
+                <button type="button" class="btn btn-success" id="idBotonEquipo7">Futbol 7</button>
+                <button type="button" class="btn btn-success" id="idBotonEquipo9">Futbol 9</button>
+                <button type="button" class="btn btn-success" id="idBotonEquipo11">Futbol 11</button>
+                <button type="button" class="btn btn-success" id="idDreamTeam">Dream Team</button>
+            </div>
+            -->
+
+            <div class="border-parrafos">
+                <p class="centrar-parrafo">Haga click en alguno de los siguientes botones para seleccionar el tamaño de los equipos que desea formar.</p>
+                <p class="centrar-parrafo">Tenga en cuenta que en caso de faltar jugadores, se completara con jugadores de la base de datos.</p>
+                <p class="centrar-parrafo">En el caso de seleccionar mas jugadores de los necesarios para formar los equipos, se descartaran aquellos de menor estadistica.</p>
+            </div>
+            <div class="buttonTeams">
+                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#futbolEquipos" id="idBotonEquipo5">
+                    FUTBOL 5
+                </button>
+                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#futbolEquipos" id="idBotonEquipo7">
+                    FUTBOL 7
+                </button>
+                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#futbolEquipos" id="idBotonEquipo9">
+                    FUTBOL 9
+                </button>
+                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#futbolEquipos" id="idBotonEquipo11">
+                    FUTBOL 11
+                </button>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal botones de equipos -->
+  <div class="modal fade" id="futbolEquipos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">EQUIPOS RESULTANTES</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <!-- TABLAS PARA LOS EQUIPOS -->
+            <table class="table table-hover" id="tablaEquipo1">
+                <thead>
+                    <tr class="table-info">
+                        <th scope="col">EQUIPO 1</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">APELLIDO</th>
+                        <th scope="col">ESTADISTICA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <table class="table table-hover" id="tablaEquipo2">
+                <thead>
+                    <tr class="table-danger">
+                        <th scope="col">EQUIPO 2</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">APELLIDO</th>
+                        <th scope="col">ESTADISTICA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+        
+        
+    </main>
+    <!-- JavaScript Bundle with Popper -->
+    
+    <script src="Player.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

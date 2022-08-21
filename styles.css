@@ -1,0 +1,93 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Silkscreen', cursive;
+}
+
+/* HEADER */
+div h1{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    color: #EF5B0C;
+}
+
+.tituloYparrafo{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 70%;
+    text-align: center;
+}
+
+.tituloYparrafo p{
+    font-size: 1.5rem;
+}
+.parrafo-titulo{
+    margin-bottom: 8rem;
+}
+
+.container{
+    width: 50%;
+    margin: auto;
+}
+
+.menuInicial{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 2rem auto 0 auto;
+}
+
+.menuInicial button{
+    margin-bottom: 2rem;
+}
+
+.tareas{
+    display: grid;
+    width: 80%;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 1rem;
+}
+
+.buttonTeams{
+    display: grid;
+    width: 80%;
+    margin: 1rem auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 1rem;
+}
+.tarea{
+    margin-top: 1rem;
+}
+
+.tarea p{
+    margin-bottom: 0.5rem;
+}
+
+.upper{
+    text-transform: uppercase;
+}
+
+.table-warning{
+    --bs-table-bg: #990000;
+    --bs-table-border-color: #575757;
+}
+
+
+.centrar-parrafo{
+    text-align: center;
+    border: 1px solid #ffff;
+    border-radius: 0px 50px 0px 50px;
+    background-color: #4C3A51;
+    width: 70%;
+    padding: 0.5rem;
+    margin: 1rem auto;
+}
